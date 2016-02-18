@@ -1,14 +1,23 @@
-<?php get_template_part('templates/page', 'header'); ?>
+<div class="container">
+
+<div id="search-title">
+	<h1>You searched for <strong><?php the_search_query(); ?></strong></h1>
+	<span><strong><?php echo $wp_query->found_posts; ?></strong> <?php _e( 'Total Results Found', 'locale' ); ?></span>
+	<?php Roots\Sage\Extras\custom_pagination() ;?>
+
+
+</div>
 
 <?php if (!have_posts()) : ?>
-  <div class="alert alert-warning">
-    <?php _e('Sorry, no results were found.', 'sage'); ?>
-  </div>
+  <div class="row" style="margin-bottom:2em;">
   <?php get_search_form(); ?>
+  </div>
 <?php endif; ?>
 
 <?php while (have_posts()) : the_post(); ?>
   <?php get_template_part('templates/content', 'search'); ?>
 <?php endwhile; ?>
 
-<?php the_posts_navigation(); ?>
+<?php Roots\Sage\Extras\custom_pagination() ;?>
+
+</div>

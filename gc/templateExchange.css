@@ -1,0 +1,96 @@
+#templateExchangeWrapper p{
+	margin:20px auto 30px;
+	line-height: 180%;
+}
+#createTemplate{
+	margin-left:20%;
+}
+#browseTemplates{
+	margin-left:20%;
+}
+#formContainter{
+	padding:20px 15px;
+}
+#formContainter input[type=text]{
+	display: block;
+    background: #fff;
+    width: 70%;
+    height: auto;
+    outline: none;
+    border-radius: 4px;
+    border: 1px solid #bbb;
+    border-bottom: 1px solid #dadada;
+    padding: 6px;
+    -webkit-transition: all .3s linear;
+    transition: all .3s linear;
+    font: 13px "Helvetica Neue",Arial,Helvetica,sans-serif;
+    margin: 0 10px 5px 0;
+    float:left;
+}
+#selectTemplate{
+	background: #fff;
+    outline: none;
+    border-radius: 4px;
+    border: 1px solid #bbb;
+    height: 30px;
+    display: block;
+    font: 13px "Helvetica Neue",Arial,Helvetica,sans-serif;
+    margin: 0;
+    color: #408bd0;
+    float:left;
+    width:24%;
+}
+.loadTypeForm{
+	padding-top:20px;
+	margin: 0px 0px 10px;
+}
+.loadTypeForm h5{
+    color: #408bd0;
+    font-size: 1.1em;
+    padding:0px 0px 10px;
+}
+.loadTypeForm input{
+    width:20% !important;
+    float:left;
+}
+.loadTypeForm input.longInput{
+    width:69% !important;
+    float:left;
+}
+.loadTypeForm label{
+    width:23% !important;
+    margin: 0 10px 5px 0;
+    padding: 6px;
+    display:block;
+    float:left;
+}
+.successMsg{
+	background: #CBEBCC;
+    color: #2C9427;
+    border: 1px solid #2C9427;
+    padding: 10px 20px;
+}
+.errorMsg{
+	background: #FDD5CE;
+    color: #ed381c;
+    border: 1px solid #ed381c;
+    padding: 10px 20px;
+}
+.errorFields{
+    background: #FDD5CE;
+    color: #ed381c;
+    border: 1px solid #ed381c;
+    padding: 10px 20px;
+    display:none;
+    margin-bottom:15px;
+}
+.successMsg p, .errorMsg p, #formContainter p{
+	margin:10px 0px 0px !important;
+}
+.j-sidebar-left .j-box-placeblog{
+	display:none;
+}
+.clear{
+	float:none;
+	clear:both !important;
+}

@@ -1,0 +1,48 @@
+#loadForm h5{
+    color: #408bd0;
+    font-size: 1.1em;
+    padding:0px 0px 20px;
+}
+#loadForm label{
+    width:23%;
+    margin: 0 10px 5px 0;
+    padding: 6px;
+    display:block;
+    float:left;
+}
+#loadForm input[type=text]{
+	display: block;
+    background: #fff;
+    width: 69%;
+    height: auto;
+    outline: none;
+    border-radius: 4px;
+    border: 1px solid #bbb;
+    border-bottom: 1px solid #dadada;
+    padding: 6px;
+    -webkit-transition: all .3s linear;
+    transition: all .3s linear;
+    font: 13px "Helvetica Neue",Arial,Helvetica,sans-serif;
+    margin: 0 10px 5px 0;
+    float:left;
+}
+.successMsg{
+	background: #CBEBCC;
+    color: #2C9427;
+    border: 1px solid #2C9427;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+}
+.errorMsg{
+	background: #FDD5CE;
+    color: #ed381c;
+    border: 1px solid #ed381c;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+}
+.successMsg p, .errorMsg p, #loadForm p{
+	margin:0px !important;
+}
+.backLink{
+    cursor: pointer;
+}

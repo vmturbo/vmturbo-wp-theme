@@ -3,8 +3,10 @@ if (post_password_required()) {
   return;
 }
 ?>
-
-<section id="comments" class="comments">
+<div id="comments-drawer">
+	<a role="button" data-toggle="collapse" href="#comments" aria-expanded="false" aria-controls="comments"><span class="badge"><?php comments_number( '0', '1', '%' ); ?></span> Comments</a>
+</div>
+<section id="comments" class="comments collapse">
   <?php if (have_comments()) : ?>
     <h2><?php printf(_nx('One response to &ldquo;%2$s&rdquo;', '%1$s responses to &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'sage'), number_format_i18n(get_comments_number()), '<span>' . get_the_title() . '</span>'); ?></h2>
 

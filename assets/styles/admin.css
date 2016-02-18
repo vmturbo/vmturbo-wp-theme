@@ -1,0 +1,4 @@
+.post-type-events #wpseo_meta, .post-type-events #relevanssi_hidebox, .post-type-collateral #wpseo_meta, .post-type-customer #wpseo_meta, .post-type-partners #wpseo_meta, .post-type-collateral #relevanssi_hidebox, #side-sortables #views_template {display:none}
+.submitbox #wpseo-score, #qt_content_wpv_conditional {display:none}
+#wp-content-media-buttons .js-wpv-shortcode-post-icon-wpv-views {display:none}
+.mce-widget[aria-label="conditional output"] { display:none }

@@ -248,6 +248,22 @@ gulp.task('clean', require('del').bind(null, [path.dist]));
 // See: http://www.browsersync.io
 gulp.task('watch', function() {
   browserSync.init({
+	notify: {
+		styles: [ 
+		"display: none",
+		"padding: 15px",
+		"font-family: sans-serif",
+		"position: fixed",
+		"font-size: 0.9em",
+		"z-index: 9999999999",
+		"right: 0px",
+		"top: 0px",
+		"border-bottom-left-radius: 5px",
+		"background-color: #1B2032",
+		"margin: 0",
+		"color: white",
+		"text-align: center"
+		]},
     files: ['{lib,templates}/**/*.php', '*.php'],
     proxy: config.devUrl,
     snippetOptions: {

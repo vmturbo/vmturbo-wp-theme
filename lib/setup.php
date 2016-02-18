@@ -13,8 +13,12 @@ function setup() {
   add_theme_support('soil-clean-up');
   add_theme_support('soil-nav-walker');
   add_theme_support('soil-nice-search');
-  add_theme_support('soil-jquery-cdn');
+  // add_theme_support('soil-jquery-cdn');
   add_theme_support('soil-relative-urls');
+  // add_theme_support('soil-google-analytics', 'UA-XXXXX-Y');
+  // add_theme_support('soil-js-to-footer');
+  add_theme_support('soil-disable-trackbacks');
+
 
   // Make theme available for translation
   // Community translations can be found at https://github.com/roots/sage-translations
@@ -83,9 +87,20 @@ function display_sidebar() {
   isset($display) || $display = !in_array(true, [
     // The sidebar will NOT be displayed if ANY of the following return true.
     // @link https://codex.wordpress.org/Conditional_Tags
-    is_404(),
+    
+	is_page(),
+	is_404(),
     is_front_page(),
+	is_search(),
+	in_category('blog'),
+	in_category('press-releases'),
+	is_singular('partners'),
+	is_singular('events'),
     is_page_template('template-custom.php'),
+    is_page_template('template-pressroom.php'),
+    is_page_template('template-roi-calculator.php'),
+    is_page_template('temp-vmt-vs-vcops.php'),
+    is_page_template('temp-vmworld-sweepstakes.php'),
   ]);
 
   return apply_filters('sage/display_sidebar', $display);
@@ -101,6 +116,9 @@ function assets() {
     wp_enqueue_script('comment-reply');
   }
 
-  wp_enqueue_script('sage/js', Assets\asset_path('scripts/main.js'), ['jquery'], null, true);
+  wp_enqueue_script('sage/js', Assets\asset_path('scripts/main.js'), ['jquery'], null, true); 
+  wp_enqueue_script('wistia-popover', '//fast.wistia.com/assets/external/popover-v1.js', 'jquery', false);
+  wp_enqueue_script('wistia-inline', '//fast.wistia.com/assets/external/E-v1.js', 'jquery', false);
+  wp_enqueue_script('marketo-forms', '//app-sjp.marketo.com/js/forms2/js/forms2.min.js', 'jquery', false);
 }
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100);

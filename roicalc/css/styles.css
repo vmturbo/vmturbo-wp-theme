@@ -1,0 +1,253 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+/*		
+*
+*		GENERAL STYLES		
+*
+*/
+
+.calculator .clear{
+	clear:both !important;
+	float:none !important;
+	}
+.calculator{
+	padding: 0px 0px 20px;
+	width:100%;
+}
+	
+	
+	
+/*		
+*
+*		INDEX PAGE		
+*
+*/
+
+.calculator h2{
+	width:70%;
+	float:left;
+	padding:0px 0px 2px;
+	margin:0px 1.5% 15px;
+	font-size:1.1em;
+	font-style:italic;
+	font-weight:normal;
+	border-bottom:3px solid #269a21;
+}
+.calculator  .fields{
+	float:left;
+	width:100%;
+	padding-bottom:15px;
+}
+.calculator  .fields p{
+	margin:10px 0px 5px;
+	color:#000;
+	padding-bottom:2px;
+	border-bottom:1px solid #436d99;
+	font-weight:bold;
+}
+.calculator  .group{
+	padding:5px 0px 0px;
+}
+	/*.calculator  .group .slider{
+		width:35%;
+		float:right;
+		margin:5px 0px 10px;
+		clear:none;
+	}
+		.calculator  .slider div{
+			float:right;
+			width:100%;
+		} */
+	.calculator .group .hint{
+		font-size:.8em;
+		color:#666;
+		font-style:italic;
+		display:block;
+		padding-bottom:10px;
+	}
+.calculator  .group:last{
+	padding-bottom:20px;
+}
+.calculator .fields span{
+	width:97%;
+	padding:0px 1.5%;
+	display:block;
+	margin:0px 0px 10px;
+	height:25px;
+	color:#000;
+	clear:both;
+	}
+	.calculator .fields label{
+		display:block;
+		float:left;
+		padding-top:3px;
+		width:60%;
+		color:#000;
+		font-size:.9em;
+		}
+	.calculator .fields input, .fields select{
+		display:block;
+		float:right;
+		padding-top:3px;
+		width:36%;
+		text-align:center;
+		border:1px solid #666;
+		border-radius:5px;
+		-moz-border-radius:5px;
+		-webkit-border-radius:5px;
+		}
+		.calculator .fields select {
+			text-indent:43%;
+		}
+.calculator .fields .small_input{
+	width:32%;
+}
+.calculator .input_descriptor{
+	float:right;
+	padding-top:5px;
+	display:block;
+	width:4%;
+	text-align:center;
+}
+.calculator .desc{
+	font-style:italic;
+	width:94%;
+	float:left;
+	padding:3%;
+	}
+	.calculator .desc p{
+		margin:0px 0px 10px;
+		padding:0px;
+		}
+.calculator .submit{
+	float:left;
+	width:100%;
+	text-align:center;
+}
+.calculator .submit input{
+	background:#6cbb7b;
+	color:#fff;
+	width:100%;
+	margin:25px auto;
+	display:block;
+	font-size:16px;
+	font-weight:bold;
+	border:none;
+	padding:15px 0px !important;
+	cursor:pointer;
+	float:none !important;
+	border-radius:0px;
+	-moz-border-radius:0px;
+	-webkit-border-radius:0px;
+}
+
+/*		
+*
+*		CALCULATIONS PAGE		
+*
+*/
+
+.calcresults .align-left{
+	text-align:left;
+}
+.calcresults .graph{
+	text-align:center;
+	padding:10px 0px;
+}
+.calcresults .links{
+	width:100%;
+	padding:10px 0px 20px;
+}
+.calcresults .links .roibutton{
+	width:28%;
+	float:left;
+	margin:10px 2.5% 0px;
+	background:#6cbb7b;
+	text-align:center;
+	color:#fff;
+	display:block;
+	font-size:16px;
+	font-weight:bold;
+	font-family: lexia, serif;
+	font-style:normal;
+	border:none;
+	padding:15px 0px !important;
+	cursor:pointer;
+}
+.calcresults table{
+	width:100%;
+	text-align:right;
+	font-size:.9em;
+	margin:0px auto 25px;
+	}
+.calcresults table tr.spacer{
+	height:15px;
+}
+.calcresults #total{
+	font-size:1.4em;
+}
+.calcresults .blue{
+	color:#333;
+	font-weight:bold;
+	}
+.calcresults .bold{
+	font-weight:bold;
+	font-size:16px;
+	color:#436d99 !important;
+	padding-top:10px;
+	}
+.calcresults  .block{
+	width:47%;
+	min-height:165px;
+	float:left;
+	margin:0px 1% 20px;
+	padding:0px 0px 20px;
+}
+.calcresults  .block h3{
+	margin:0px;
+	border-bottom:2px solid #436d99;
+	border-right:2px solid #436d99;
+	color:#000;
+	padding:3px;
+}
+.calcresults h2{
+	padding-top:30px;
+	color:#6cbb7b !important;
+}
+.calcresults .block span{
+	font-size:.6em;
+	color:#666;
+	text-indent:3%;
+	display:block;
+	padding-top:5px;
+}
+.calcresults .block p{
+	font-size:.9em;
+	padding:3px 1%;
+	margin:5px 0px 0px;
+	text-indent:2%;
+}
+.calcresults .graph{
+	position:relative;
+	bottom:10px;
+}
+@media (max-width:600px){
+	.calcresults .block{
+		width:98%;
+	}
+	.calcresults h2, .calcresults table{
+		display:none;
+	}
+	.graph img{
+		width:100%;
+	}
+	.calcresults .links .roibutton{
+		width:100%;
+		margin:10px 0px;
+	}
+	.bread_crumb{
+		display:none;
+	}
+}

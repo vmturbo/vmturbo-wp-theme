@@ -18,25 +18,106 @@
     // All pages
     'common': {
       init: function() {
-        // JavaScript to be fired on all pages
+		$("#home-hero-1").backstretch("http://cdn.vmturbo.com/wp-content/uploads/2014/04/mG974Zv1.jpg");
+		
+		$( ".btn.btn-switch" ).hover(function() {
+				$("#btn-dl" ).addClass( "hover" );
+				$("#btn-dl").html('<span class="sub-title">GET CONTROL</span><span class="sub-hover">Start For Free</span>');
+			});
+			
+			$( ".btn.btn-switch" ).mouseleave(function() {
+				$("#btn-dl" ).removeClass( "hover" );
+				$("#btn-dl").html('Downloads');
+			});
+			  $("#btn-dl" ).on('click', "a", function(e) {
+				   window.location.href='http://vmturbo.com';
+			});
+  
+  
+		$("#nav-search").click(function() {
+			$("#nav-search").stop().toggleClass( "active" );
+			$( "#search-redux-container" ).stop().slideToggle( "fast", function() {
+				$("#s").focus();
+		  });
+		});
+		
+		wistiaEmbeds.onFind(function(video) {
+		  video.videoFoam(true);
+		});
+		
       },
       finalize: function() {
+		  
+		//  $(".navbar").headroom({
+		//	   offset : 150,
+		//	   onPin : function() {
+		//		},
+				// callback when unpinned, `this` is headroom object
+		//		onUnpin : function() {
+		//			$('#nav-search').removeClass('active');
+		//			$( "#search-redux-container" ).stop().hide();
+					
+		//			$('.dropdown.open').removeClass('open');
+		//			$('.dropdown-menu').stop(true, true).fadeOut(250);
+		//				if ($(window).width() < 768) {
+		//				$('.navbar-collapse.collapse.in').removeClass('in');
+		//				}
+		//		}
+		//	});
+			  
+		  // initialize dropdowns
+		  $(".dropdown-toggle").dropdown();
+		  
+		  // add slide down effects on dropdowns
+			$('.dropdown').on('show.bs.dropdown', function(e){
+				$(this).find('.dropdown-menu').first().stop(true, true).slideDown();
+			});
+			
+			$('.dropdown').on('hide.bs.dropdown', function(e){
+				if ($(window).width() < 768) {
+				$(this).find('.dropdown-menu').first().stop(true, true).hide();
+				} else {
+				$(this).find('.dropdown-menu').first().stop(true, true).slideUp();
+				}
+			});
+		  // stop yamm in-menu pre-mature close
+		  $(document).on('click', '.yamm .dropdown-menu', function(e) {
+			  e.stopPropagation();
+			});
         // JavaScript to be fired on all pages, after page specific JS is fired
       }
     },
     // Home page
     'home': {
       init: function() {
-        // JavaScript to be fired on the home page
+		$('.slick').slick({
+			slidesToShow: 6,
+			slidesToScroll: 1,
+			autoplay: true,
+			arrows: false,
+			pauseOnHover: false,
+			autoplaySpeed: 1200,
+		});
       },
       finalize: function() {
         // JavaScript to be fired on the home page, after the init JS
+      }
+    },
+    'blog': {
+      init: function() {
+        $("#blog-head").backstretch("//cdn.vmturbo.com/wp-content/uploads/2014/04/home-hero-place.jpg");
       }
     },
     // About us page, note the change from about-us to about_us.
     'about_us': {
       init: function() {
         // JavaScript to be fired on the about us page
+      }
+    },
+    // About us page, note the change from about-us to about_us.
+    'page_template_template_landingpage': {
+      init: function() {
+
       }
     }
   };
