@@ -16,7 +16,7 @@
 	
 	<div class="custom-header custom-header-video">
 		<div class="container<?php if(get_field('header_size') == "Small") { ?> small<?php } ?><?php if(get_field('header_size') == "Medium") { ?> medium<?php } ?><?php if(get_field('header_size') == "Large") { ?> large<?php } ?>">
-			<h1><?php the_title() ; ?></h1>
+			<h1><?php if(get_field('custom_h1') == "1") { the_field('custom_h1_text'); } else { the_title(); } ?></h1>
 			<?php if(get_field('header_tagline')) { ?><span id="custom-header-tagline"><?php the_field('header_tagline'); ?></span><?php } ?>
 			<?php if(get_field('cta_button')) { ?>
 			<?php if(get_field('cta_type') == 'Wistia Popover') { ?><span class="wistia_embed wistia_async_<?php the_field('wistia_id'); ?> popover=true popoverContent=link" style="display:inline"><?php } ?>
@@ -45,7 +45,7 @@
 		<div class="container<?php if(get_field('header_size') == "Small") { ?> small<?php } ?><?php if(get_field('header_size') == "Medium") { ?> medium<?php } ?><?php if(get_field('header_size') == "Large") { ?> large<?php } ?>">
 			<?php if(get_field('enable_breadcrumbs')) {
 				if(function_exists('yoast_breadcrumb')){yoast_breadcrumb('<p id="breadcrumbs">','</p>');}} ?>
-			<h1><?php the_title() ; ?></h1>
+			<h1><?php if(get_field('custom_h1') == "1") { the_field('custom_h1_text'); } else { the_title(); } ?></h1>
 			<?php if(get_field('header_tagline')) { ?><span id="custom-header-tagline"><?php the_field('header_tagline'); ?></span><?php } ?>
 			<?php if(get_field('cta_button')) { ?>
 			<?php if(get_field('cta_type') == 'Wistia Popover') { ?><span class="wistia_embed wistia_async_<?php the_field('wistia_id'); ?> popover=true popoverContent=link" style="display:inline"><?php } ?>
@@ -66,7 +66,7 @@
 		<div class="container<?php if(get_field('header_size') == "Small") { ?> small<?php } ?><?php if(get_field('header_size') == "Medium") { ?> medium<?php } ?><?php if(get_field('header_size') == "Large") { ?> large<?php } ?>">
 			<?php if(get_field('enable_breadcrumbs')) {
 				if(function_exists('yoast_breadcrumb')){yoast_breadcrumb('<p id="breadcrumbs">','</p>');}} ?>
-			<h1><?php the_title() ; ?></h1>
+			<h1><?php if(get_field('custom_h1') == "1") { the_field('custom_h1_text'); } else { the_title(); } ?></h1>
 			<?php if(get_field('header_tagline')) { ?><span id="custom-header-tagline"><?php the_field('header_tagline'); ?></span><?php } ?>
 			
 			<?php if(get_field('cta_button')) { ?>
@@ -106,7 +106,7 @@
 		<div class="container<?php if(get_field('header_size') == "Small") { ?> small<?php } ?><?php if(get_field('header_size') == "Medium") { ?> medium<?php } ?><?php if(get_field('header_size') == "Large") { ?> large<?php } ?>">
 			<?php if(get_field('enable_breadcrumbs')) {
 				if(function_exists('yoast_breadcrumb')){yoast_breadcrumb('<p id="breadcrumbs">','</p>');}} ?>
-			<h1><?php the_title() ; ?></h1>
+			<h1><?php if(get_field('custom_h1') == "1") { the_field('custom_h1_text'); } else { the_title(); } ?></h1>
 			<?php if(get_field('header_tagline')) { ?><span id="custom-header-tagline"><?php the_field('header_tagline'); ?></span><?php } ?>
 			<?php if(get_field('cta_button')) { ?>
 			<?php if(get_field('cta_type') == 'Wistia Popover') { ?><span class="wistia_embed wistia_async_<?php the_field('wistia_id'); ?> popover=true popoverContent=link" style="display:inline"><?php } ?>
@@ -123,7 +123,7 @@
 
 	<div class="custom-header custom-header-disabled">
 		<div class="container<?php if(get_field('header_size') == "Small") { ?> small<?php } ?><?php if(get_field('header_size') == "Medium") { ?> medium<?php } ?><?php if(get_field('header_size') == "Large") { ?> large<?php } ?>">
-			<h1><?php the_title() ; ?></h1>
+			<h1><?php if(get_field('custom_h1') == "1") { the_field('custom_h1_text'); } else { the_title(); } ?></h1>
 			<?php if(get_field('header_tagline')) { ?><span id="custom-header-tagline"><?php the_field('header_tagline'); ?></span><?php } ?>
 			<?php if(get_field('cta_button')) { ?>
 			<?php if(get_field('cta_type') == 'Wistia Popover') { ?><span class="wistia_embed wistia_async_<?php the_field('wistia_id'); ?> popover=true popoverContent=link" style="display:inline"><?php } ?>
@@ -181,7 +181,7 @@
 	
 
 	<?php elseif(get_row_layout() == "cta_bar"): ?>
-	<div class="custom-flexible-cta<?php if(get_sub_field('cta_style') == "light") { ?> layout-light<?php } ?><?php if(get_sub_field('cta_style') == "dark") { ?> layout-dark<?php } ?><?php if(get_sub_field('cta_buttons') == "2") { ?> dual-buttons<?php } ?>">
+	<div class="custom-flexible-cta<?php if(get_sub_field('style') == "white") { ?> layout-white<?php } ?><?php if(get_sub_field('cta_style') == "light") { ?> layout-light<?php } ?><?php if(get_sub_field('cta_style') == "dark") { ?> layout-dark<?php } ?><?php if(get_sub_field('cta_buttons') == "2") { ?> dual-buttons<?php } ?>">
 		<div class="container">
 			<div class="<?php if(get_sub_field('cta_buttons') == "2") { ?>col-md-7<?php } else { ?>col-md-9<?php } ?>">
 				<?php if(get_sub_field('cta_subheading')) { ?><h3><?php } else { ?><h3 class="custom-single-line"><?php } ?><?php the_sub_field("cta_heading");?></h3>
@@ -204,6 +204,19 @@
 		</div>
 	</div>
 	
+	
+	<?php elseif(get_row_layout() == "cta_bar_ops_man_standard"): ?>
+	<div class="custom-flexible-cta<?php if(get_sub_field('style') == "white") { ?> layout-white<?php } ?><?php if(get_sub_field('style') == "light") { ?> layout-light<?php } ?><?php if(get_sub_field('style') == "dark") { ?> layout-dark<?php } ?>">
+		<div class="container">
+			<div class="col-md-9">
+				<h3>See what Application Performance Control can do for you.</h3>
+				<h4>Decisions in under an hour. Payback in less than 3 months.</h4>
+			</div>
+			<div class="col-md-3">
+				<a class="btn btn-vmt pull-right" href="http://vmturbo.com/downloads/operations-manager-30-day-trial/">Download Free Trial</a>
+			</div>
+		</div>
+	</div>
 	
 	<?php elseif(get_row_layout() == "single_line_header"): ?>
 	<div class="custom-flexible-heading<?php if(get_sub_field('style') == "light") { ?> white<?php } ?><?php if(get_sub_field('style') == "light gray") { ?> gray<?php } ?><?php if(get_sub_field('style') == "dark") { ?> dark<?php } ?>"<?php if(get_sub_field('remove_bottom_padding') == '1') { ?> style="padding-bottom:0;"<?php } ?>>
