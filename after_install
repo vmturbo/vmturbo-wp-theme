@@ -1,4 +1,5 @@
 #!/bin/bash
 sudo chmod -R 755 /var/www/html/wp-content/themes/vmturbo
 rm -f /var/www/html/wp-content/themes/vmturbo/appsec.yml
-rm -f /var/www/html/wp-content/themes/vmturbo/change_permissions
+rm -f /var/www/html/wp-content/themes/vmturbo/before_install
+rm -f /var/www/html/wp-content/themes/vmturbo/after_install
