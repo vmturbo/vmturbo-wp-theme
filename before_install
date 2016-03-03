@@ -1,3 +1,9 @@
 #!/bin/bash
-sudo rm -rf /var/www/html/wp-content/themes/vmturbo
-sudo mkdir /var/www/html/wp-content/themes/vmturbo
+cp /var/www/html/wp-content/themes/vmturbo /var/www/html/wp-content/themes/vmturboOLD
+rm -rf /var/www/html/wp-content/themes/vmturbo
+mkdir /var/www/html/wp-content/themes/vmturbo
+cp /var/www/html/wp-content/themes/vmturboOLD/dist /var/www/html/wp-content/themes/vmturbo/dist
+cp /var/www/html/wp-content/themes/vmturboOLD/.git /var/www/html/wp-content/themes/vmturbo/.git
+cp /var/www/html/wp-content/themes/vmturboOLD/bower_components /var/www/html/wp-content/themes/vmturbo/bower_components
+cp /var/www/html/wp-content/themes/vmturboOLD/node_modules /var/www/html/wp-content/themes/vmturbo/node_modules
+rm -rf /var/www/html/wp-content/themes/vmturboOLD
