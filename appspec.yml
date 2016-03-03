@@ -4,7 +4,11 @@ files:
   - source: /
     destination: /var/www/html/wp-content/themes/vmturbo
 hooks:
+  BeforeInstall:
+    - location: before_install
+      timeout: 500
+      runas: root
   AfterInstall:
-    - location: change_permissions
+    - location: after_install
       timeout: 500
       runas: root
