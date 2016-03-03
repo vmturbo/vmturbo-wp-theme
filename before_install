@@ -6,3 +6,4 @@ cp -r /var/www/html/wp-content/themes/vmturboOLD/dist /var/www/html/wp-content/t
 cp -r /var/www/html/wp-content/themes/vmturboOLD/.git /var/www/html/wp-content/themes/vmturbo/.git
 cp -r /var/www/html/wp-content/themes/vmturboOLD/bower_components /var/www/html/wp-content/themes/vmturbo/bower_components
 cp -r /var/www/html/wp-content/themes/vmturboOLD/node_modules /var/www/html/wp-content/themes/vmturbo/node_modules
+rm -rf /var/www/html/wp-content/themes/vmturboOLD
