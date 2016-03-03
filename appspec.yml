@@ -1,0 +1,10 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /var/www/html/wp-content/themes/vmturbo
+hooks:
+  AfterInstall:
+    - location: change_permissions
+      timeout: 500
+      runas: root
