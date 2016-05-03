@@ -20,8 +20,20 @@
 				  <div class="col-sm-12">
 					  <h1><?php echo get_the_author_meta('display_name'); ?></h1>
 					  <p><?php echo get_the_author_meta('description'); ?></p>
-					  <img style="height:30px; width:30px;" src="http://localhost:8888/vmturbo/wp-content/uploads/2016/04/linkedin.png"/>
+					  	<!-- <?php if (get_the_author_meta('linkedin_url')) { ?>
+					  		<img style="height:30px; width:30px;" src="http://localhost:8888/vmturbo/wp-content/uploads/2016/04/linkedin.png"/> <?php echo get_the_author_meta('linkedin_url'); ?>
+					  	<?php } ?> -->
 				  </div>
+			  </div>
+			  <div class="row">
+			  	<?php if (get_the_author_meta('linkedin_url')) { ?>
+				  	<div class="col-sm-6">
+				  		<img class="linkedin-img" style="height:30px; width:30px;" src="http://localhost:8888/vmturbo/wp-content/uploads/2016/04/linkedin.png"/>
+				  	</div>
+				  	<div class="col-sm-6">
+				  		<p class="linkedin-url"><?php echo get_the_author_meta('linkedin_url'); ?></p>
+				  	</div>
+				  <?php } ?>
 			  </div>
 		  </div>
 		  <?php } else { ?>
@@ -40,4 +52,13 @@
 <?php endwhile; ?>
 	</div>
   </div>
-<?php the_posts_navigation(); ?>
+<!-- <?php the_posts_navigation(); ?> -->
+
+<div class="row">
+  <div class="col-sm-4"></div>
+  <div class="col-sm-8">
+  	<?php the_posts_navigation(); ?>
+  </div>
+</div>
+
+
