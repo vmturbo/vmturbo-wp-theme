@@ -48,6 +48,8 @@
       },
       finalize: function() {
 		  
+		  $(".image-links").magnificPopup({type:"image"});
+		  
 		//  $(".navbar").headroom({
 		//	   offset : 150,
 		//	   onPin : function() {
@@ -90,14 +92,14 @@
     // Home page
     'home': {
       init: function() {
-		$('.slick').slick({
-			slidesToShow: 6,
-			slidesToScroll: 1,
-			autoplay: true,
-			arrows: false,
-			pauseOnHover: false,
-			autoplaySpeed: 1200,
-		});
+		// $('.slick').slick({
+			// slidesToShow: 6,
+			// slidesToScroll: 1,
+			// autoplay: true,
+			// arrows: false,
+			// pauseOnHover: false,
+			// autoplaySpeed: 2500,
+		// });
       },
       finalize: function() {
         // JavaScript to be fired on the home page, after the init JS

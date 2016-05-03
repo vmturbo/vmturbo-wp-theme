@@ -138,7 +138,7 @@
 				  scrollTarget: '#resource-nav',
 				  
 				  afterScroll: function() { 
-					$('nav.navbar').removeClass('headroom--pinned').addClass('headroom--unpinned');
+//					$('nav.navbar').removeClass('headroom--pinned').addClass('headroom--unpinned');
 				  }
 			     });
 		});  

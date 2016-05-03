@@ -10,7 +10,7 @@
 					<div id="header-block">
 					<h1><?php the_title() ; ?></h1>
 					</div>
-					<div><img src="http://cdn.vmturbo.com/wp-content/uploads/2014/08/awards.png" class="img-responsive" /></div>
+					<div><img src="http://cdn.vmturbo.com/wp-content/uploads/2016/04/home-awards.png" class="img-responsive" /></div>
 					<div id="content-block">
 						<div id="content-about" class="row">
 							<div class="col-md-6">

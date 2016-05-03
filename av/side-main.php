@@ -15,6 +15,11 @@
 	</div>
 	<span style=" font-size: .8em;color: #B0B0B0;text-align: center;display: block;margin-top: 1em;">Your e-mail address is never sold, shared or distributed to any third-parties and is only used for blog notifications.</span>
 </div>
+
+	<div id="av-rss">
+		<a class="btn btn-default" href="http://vmturbo.com/category/about-virtualization/feed/" target="_blank" style="width:100%;margin-bottom:2em;"><span class="fa fa-rss"></span><span style="font-size: .9em;font-weight: 600;margin-left: .5em;">About:Virtualization RSS Feed</span></a>
+	</div>
+			
 <?php
 if ( !wp_is_mobile() ) { ?><div class="twitterfeed hidden-xs">
 	<a class="twitter-timeline" href="https://twitter.com/aboutvirtualiza" data-widget-id="472432462627217408">Tweets by @aboutvirtualiza</a>

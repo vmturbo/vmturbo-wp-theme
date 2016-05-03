@@ -66,7 +66,7 @@
 						  <a href="<?= esc_url(home_url('/')); ?>downloads/operations-manager-30-day-trial/">Operations Manager Trial</a>
                         </li>
                         <li>
-                          <p><strong>Free Tool</strong></p>
+                          <p><strong>Free Tools</strong></p>
 						  <a href="<?= esc_url(home_url('/')); ?>downloads/vmturbo-virtual-health-monitor/">Virtual Health Monitor</a>
 						</li>
 						<li>
@@ -74,7 +74,7 @@
                         </li>
                       </ul>
 					  <div class="col-xs-6 col-sm-4 hidden-xs">
-						<a href="<?= esc_url(home_url('/')); ?>data-center-control/"><img src="http://vmturbo.com/wp-content/uploads/2014/04/opsman-laptop.png" class="img-responsive" /><span id="new-feature"><strong>VMTurbo 5.4</strong>: What's new &raquo;</span></a>
+						<a href="<?= esc_url(home_url('/')); ?>data-center-control/"><img src="http://vmturbo.com/wp-content/uploads/2014/04/opsman-laptop.png" class="img-responsive" /><span id="new-feature"><strong>VMTurbo 5.5</strong>: What's new &raquo;</span></a>
 					  </div>
                     </div>
                   </div>
@@ -269,7 +269,7 @@
                         <li><a href="<?= esc_url(home_url('/')); ?>company/channel-partners/">Channel Partners</a></li>
 						<li><a href="<?= esc_url(home_url('/')); ?>company/service-provider-partners/">Service Providers</a></li>
 						<li><a href="<?= esc_url(home_url('/')); ?>company/technology-partners/">Technology Alliances</a></li>
-						<li><a href="https://vmturbo.partnerprm.com/">Partner Portal</a></li>
+						<li><a href="https://greencircle.vmturbo.com/community/partner-portal">Partner Portal</a></li>
                       </ul>
                     </div>
                   </div>
@@ -309,10 +309,10 @@
 					<a href="#" class="btn btn-success hidden-xs btn-switch" id="btn-dl">Download Now</a>
 				   </li>-->
                     <li class="dropdown">
-						<a href="<?= esc_url(home_url('/')); ?>downloads/operations-manager-30-day-trial/" class="btn btn-success hidden-xs btn-switch" id="btn-dl">Downloads</a>
+						<a href="<?= esc_url(home_url('/')); ?>downloads/operations-manager-30-day-trial/" class="btn btn-success hidden-xs btn-switch" id="btn-dl" onclick="_gaq.push(['_trackEvent', 'Navbar', 'Click', 'Download - 30 Day']);">Downloads</a>
 					 <ul class="dropdown-menu">
 					   <li>
-						<a href="<?= esc_url(home_url('/')); ?>downloads/vmturbo-virtual-health-monitor/" class="btn btn-success hidden-xs btn-switch" id="btn-dl-vhm"><span class="sub-title">GET MONITORING</span><span class="sub-hover">Free Forever</span></a>
+						<a href="<?= esc_url(home_url('/')); ?>downloads/vmturbo-virtual-health-monitor/" class="btn btn-success hidden-xs btn-switch" id="btn-dl-vhm" onclick="_gaq.push(['_trackEvent', 'Navbar', 'Click', 'Download - VHM']);"><span class="sub-title">GET MONITORING</span><span class="sub-hover">Free Forever</span></a>
 					   </li>
 					 </ul>
 				   </li>

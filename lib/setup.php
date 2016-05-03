@@ -96,6 +96,7 @@ function display_sidebar() {
 	in_category('press-releases'),
 	is_singular('partners'),
 	is_singular('events'),
+	is_singular('videos'),
     is_page_template('template-custom.php'),
     is_page_template('template-pressroom.php'),
     is_page_template('template-roi-calculator.php'),

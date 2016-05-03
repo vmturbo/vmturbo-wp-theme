@@ -97,7 +97,7 @@ if($vm_count < 1){
 	$vm_count = 1;
 }
 $cpu_sockets = intval($cpu_sockets);
-if($cpu_sockets < 1){
+if($cpu_sockets < 0){
 	$cpu_sockets = 1;
 }
 $vm_g_rate = intval($vm_g_rate);
@@ -299,7 +299,7 @@ $y2_op_savings = $y2_hw_maint_sav + $y2_sw_op_sav + $y2_support_staff_saved ;
 $y3_op_savings = $y3_hw_maint_sav + $y3_sw_op_sav + $y3_support_staff_saved ;
 
 // VMT Investment
-if ($cpu_sockets < 1){
+if ($cpu_sockets == 0){
 	$cpu_sockets = $server_count * 2;
 }
 $vmt_ufcost = $cpu_sockets * 899;

@@ -22,6 +22,9 @@
 			<div class="sidebar-av" style="width:100%;float:none;">
 			
 			<?php get_template_part( 'av/side', 'logo' ); ?>
+			
+			<h1 style="font-size: .9em;margin: 2em 0 0 0;line-height: 1.5em;padding: 0 5px;text-align: center;display:block"><strong>About:Virtualization</strong> features the latest news in Virtualization and Cloud Computing.</h1>
+			
 			<?php get_template_part( 'av/side', 'main' ); ?>
 
 			</div>	
@@ -29,10 +32,7 @@
 		<div class="col-sm-8 col-md-9">
 		
 		<div class="row" style="padding:15px 0">
-		<div class="col-sm-8">
-			<h1 style="font-size: 1.2em;margin: 0;line-height: 34px;padding: 0 5px;text-align: center;"><strong>About:Virtualization</strong> features the latest news in Virtualization and Cloud Computing.</h1>
-		</div>
-        <div class="col-sm-4">
+        <div class="col-sm-4 col-sm-push-8">
 			<?php get_template_part( 'av/inc/part', 'search' ); ?>
         </div>
 		</div>

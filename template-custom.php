@@ -208,11 +208,11 @@
 	<?php elseif(get_row_layout() == "cta_bar_ops_man_standard"): ?>
 	<div class="custom-flexible-cta<?php if(get_sub_field('style') == "white") { ?> layout-white<?php } ?><?php if(get_sub_field('style') == "light") { ?> layout-light<?php } ?><?php if(get_sub_field('style') == "dark") { ?> layout-dark<?php } ?>">
 		<div class="container">
-			<div class="col-md-9">
+			<div class="col-md-8">
 				<h3>See what Application Performance Control can do for you.</h3>
 				<h4>Decisions in under an hour. Payback in less than 3 months.</h4>
 			</div>
-			<div class="col-md-3">
+			<div class="col-md-4">
 				<a class="btn btn-vmt pull-right" href="http://vmturbo.com/downloads/operations-manager-30-day-trial/">Download Free Trial</a>
 			</div>
 		</div>
@@ -367,6 +367,140 @@
 			<?php endforeach; wp_reset_postdata(); endif; ?>
 			</div>
 		</div>
+		
+	<?php elseif(get_row_layout() == "event_map"): // layout: map ?>
+	<?php 
+		$contact_address = get_sub_field('location');
+		$address = explode( "," , $contact_address['address']);
+
+			$originalStart = get_sub_field('start_date');
+			$newStart = date("F j, Y", strtotime($originalStart));
+			
+			$originalEnd = get_sub_field('end_date');
+			$newEnd = date("F j, Y", strtotime($originalEnd));
+		?>
+		<div class="container">
+		<div class="row" style="padding-top:40px;padding-bottom:40px;">
+		<div class="col-sm-4">
+			<div style="background: #fafafa; padding: 20px;border:1px solid #ddd;">
+		<h3 style="font-weight:600;margin-left:7px;margin-top:0;">Event Details</h3>
+			<table class="table table-hover">
+				<tr>
+					<td><strong>Start Date:</strong></td>
+					<td class="text-right"><?php echo $newStart; ?></td>
+				</tr>
+				<tr>
+					<td><strong>End Date:</strong></td>
+					<td class="text-right"><?php echo $newEnd; ?></td>
+				</tr>
+			<?php if(!get_sub_field('all_day')) { ?>
+				<tr>
+					<td><strong>Start Time:</strong></td>
+					<td class="text-right"><?php the_sub_field('start_time'); ?></td>
+				</tr>
+				<tr>
+					<td><strong>End Time:</strong></td>
+					<td class="text-right"><?php the_sub_field('end_time'); ?></td>
+				</tr>
+			<?php } ?>
+			<?php if(get_sub_field('all_day')) { ?>
+				<tr>
+					<td class="text-center all-day" colspan="2"><strong>This is an all day event.</strong></td>
+				</tr>
+			<?php } ?>
+			</table>
+			
+			<?php if(!get_sub_field('virtual_event')) { ?>
+			<span id="location" style="font-size: 1em;font-weight: 600;text-align: center;display: inline-block;border-top: 1px solid #ddd;padding-top: 20px;"><?php $location = get_sub_field('location'); echo $location['address']; ?></span>
+			
+		</div>
+		</div>
+		<div class="col-sm-8">
+			<?php $location = get_sub_field('location');
+				  if( !empty($location) ): ?>
+				<div class="acf-map">
+					<div class="marker" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>">
+					<h4 style="max-width:300px;"><?php $location = get_sub_field('location'); echo $location['address']; ?></h4>
+					<a target="_blank" href="https://www.google.com/maps?saddr=My+Location&daddr=<?php echo $location['lat'] . ',' . $location['lng']; ?>">Get Directions</a>
+					</div>
+				</div>
+				<?php endif; ?>
+			<?php } ?>
+		</div>
+		</div>
+		</div>
+		<style type="text/css">
+		.acf-map {
+			width: 100%;
+			height: 400px;
+			border: #ccc solid 1px;
+			margin: 0;
+		}
+		.acf-map img {
+		   max-width: inherit !important;
+		}
+		</style>
+		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+		<script type="text/javascript">
+
+		(function($) {
+		function new_map( $el ) {
+			var $markers = $el.find('.marker');
+			var args = {
+				zoom		: 16,
+				center		: new google.maps.LatLng(0, 0),
+				mapTypeId	: google.maps.MapTypeId.ROADMAP
+			};
+			var map = new google.maps.Map( $el[0], args);
+			map.markers = [];
+			$markers.each(function(){
+				add_marker( $(this), map );
+			});
+			center_map( map );
+			return map;
+		}
+		function add_marker( $marker, map ) {
+			var latlng = new google.maps.LatLng( $marker.attr('data-lat'), $marker.attr('data-lng') );
+			var marker = new google.maps.Marker({
+				position	: latlng,
+				map			: map
+			});
+			map.markers.push( marker );
+			if( $marker.html() )
+			{
+				var infowindow = new google.maps.InfoWindow({
+					content		: $marker.html()
+				});
+				google.maps.event.addListener(marker, 'click', function() {
+					infowindow.open( map, marker );
+				});
+			}
+		}
+		function center_map( map ) {
+			var bounds = new google.maps.LatLngBounds();
+			$.each( map.markers, function( i, marker ){
+				var latlng = new google.maps.LatLng( marker.position.lat(), marker.position.lng() );
+				bounds.extend( latlng );
+			});
+			if( map.markers.length == 1 )
+			{
+				map.setCenter( bounds.getCenter() );
+				map.setZoom( 16 );
+			}
+			else
+			{
+				map.fitBounds( bounds );
+			}
+		}
+		var map = null;
+		$(document).ready(function(){
+			$('.acf-map').each(function(){
+				map = new_map( $(this) );
+			});
+			$("#event-header").backstretch("//cdn.vmturbo.com/wp-content/uploads/2014/04/qos_04.jpg");
+		});
+		})(jQuery);
+		</script>
 		
 	<?php elseif(get_row_layout() == "featured_posts"): // layout: Featured Posts ?>
 

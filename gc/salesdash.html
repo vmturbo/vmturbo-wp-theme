@@ -17,7 +17,7 @@ jQuery(document).ready(function($) {
 	});
 
 	jQuery.backstretch("//cdn.vmturbo.com/wp-content/uploads/2014/04/gc-bg.jpg");
-	jQuery('#gc-welcome-box, #jive-body').hide();
+	jQuery('#gc-welcome-box, #jive-body, #turbofest-banner').hide();
 	jQuery(".j-body-home div#jive-widget-container_1 > div:nth-child(3)").appendTo("#slide-main");
 
 	jQuery("#switch-community a").click(function(){
@@ -25,7 +25,7 @@ jQuery(document).ready(function($) {
 		jQuery(this).addClass("active");
 		jQuery("#toolbox-main").stop().slideUp(function(){
 			jQuery("#slide-main > div").insertAfter(".j-body-home div#jive-widget-container_1 > div:nth-child(2)");
-			jQuery('#new-menu-container, #jive-body').stop().slideDown('slow');
+			jQuery('#new-menu-container, #jive-body, #turbofest-banner').stop().slideDown('slow');
 		});
 	});
 	jQuery("#switch-toolbox a").click(function(){
@@ -33,7 +33,7 @@ jQuery(document).ready(function($) {
 		jQuery(this).addClass("active");
 		jQuery(".j-body-home div#jive-widget-container_1 > div:nth-child(3)").appendTo("#slide-main");
 
-		jQuery('#new-menu-container, #jive-body').stop().slideUp(function(){
+		jQuery('#jive-body, #turbofest-banner').stop().slideUp(function(){
 			jQuery("#toolbox-main").stop().slideDown('slow');
 		});
 	});
@@ -586,10 +586,10 @@ html, body {
 			<li class="slide-5"><a href="#">&raquo;&nbsp;&nbsp;Customer Reviews</a></li>
 
 			<li class="label"><strong>Resources</strong></li>
-			<li><a href="https://vmturbo.atlassian.net/wiki/display/CC/The+James+S.+McInerny+Sales+Enablement+Wiki" target="_blank">Sales Enablement Wiki</a></li>
-			<li class="sub-item"><a href="https://vmturbo.atlassian.net/wiki/pages/viewpage.action?pageId=61768170" target="_blank">&bull;&nbsp; Marketing Collateral</a></li>
-			<li class="sub-item"><a href="https://vmturbo.atlassian.net/wiki/display/CC/I.T.+Dictionary" target="_blank">&bull;&nbsp; IT Dictionary</a></li>
-			<li class="sub-item"><a href="https://vmturbo.atlassian.net/wiki/display/CC/Competitive+Analysis+-+Learning+and+Documentation" target="_blank">&bull;&nbsp; Competitive Analysis</a></li>
+			<li><a href="https://greencircle.vmturbo.com/groups/vmt-employees/content?filterID=contentstatus%5Bpublished%5D~category%5Bsales-enablement-collateral%5D" target="_blank">Sales Enablement Collateral</a></li>
+			<li class="sub-item"><a href="https://greencircle.vmturbo.com/groups/vmt-employees/content?filterID=contentstatus%5Bpublished%5D~category%5Bsales-resources%5D" target="_blank">&bull;&nbsp; Sales Resources</a></li>
+			<li class="sub-item"><a href="https://greencircle.vmturbo.com/docs/DOC-2959" target="_blank">&bull;&nbsp; IT Dictionary</a></li>
+			<li class="sub-item"><a href="https://greencircle.vmturbo.com/groups/vmt-employees/content?filterID=contentstatus%5Bpublished%5D~tag%5Bcompetitive+analysis%5D" target="_blank">&bull;&nbsp; Competitive Analysis</a></li>
 			<li><a href="https://greencircle.vmturbo.com/groups/vmt-employees">GC Employee Space</a></li>
 			<li target="_blank"><a href="http://vmturbo.com/resources/vmturbo-pressroom/" target="_blank">Press Room</a></li>
 
@@ -682,11 +682,11 @@ html, body {
 
 					<div class="clearfix">
 					<h3 style="margin-bottom:1em;float:left;">Training Assets</h3>
-					<a class="byline" href="https://vmturbo.atlassian.net/wiki/display/CC/The+James+S.+McInerny+Sales+Enablement+Wiki" target="_blank">Sales Enablement Wiki</a>
+					<a class="byline" href="https://greencircle.vmturbo.com/groups/vmt-employees/content?filterID=contentstatus%5Bpublished%5D~category%5Bsales-enablement-collateral%5D" target="_blank">Sales Enablement Collateral</a>
 					</div>
 					<div class="item item-short">
 						<div class="dl-post-item clearfix">
-							<a href="https://vmturbo.atlassian.net/wiki/display/CC/Competitive+Analysis+-+Learning+and+Documentation" target="_blank" class="title">Competitive Analysis</a>
+							<a href="https://greencircle.vmturbo.com/groups/vmt-employees/content?filterID=contentstatus%5Bpublished%5D~tag%5Bcompetitive+analysis%5D" target="_blank" class="title">Competitive Analysis</a>
 
 							<a class="btn btn-vmt-secondary" target="_blank" href="https://vmturbo.atlassian.net/wiki/display/CC/Competitive+Analysis+-+Learning+and+Documentation">GO TO WIKI</a>
 						</div>

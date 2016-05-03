@@ -19,8 +19,12 @@
 
 				<?php if(is_page('30542')){ ?>
 					<form id="mktoForm_1124"></form>
+				<?php } elseif(is_page('37281')) { ?>
+					<form id="mktoForm_1632"></form>
 				<?php } elseif(is_page('28585')) { ?>
 					<form id="mktoForm_1131"></form>
+				<?php } if(get_field('marketo_form_version') == 'global') { ?>
+					<form id="mktoForm_<?php the_field('form_type');?>"></form>
 				<?php } else { ?>
 					<form id="mktoForm_<?php if(get_field('product_download') && get_field('license_type') == "community") { ?>503<?php } elseif(get_field('product_download') && get_field('license_type') == "trial") { ?>502<?php } elseif(get_field('product_download') && get_field('license_type') == "freemium") { ?>1015<?php } elseif(get_field('product_download') && get_field('license_type') == "freemiumTrial") { ?>1014<?php } elseif(get_field('product_download') && get_field('license_type') == "saas") { ?>1131<?php } else { the_field('marketo_form_code'); } ?>"></form>
 				<?php } ?>
@@ -40,15 +44,7 @@
 
 				var $jQ = jQuery.noConflict();
 
-				<?php if(is_page('30542')) { ?>
-
-					MktoForms2.loadForm("//app-sjp.marketo.com", "303-ZIH-630", 1124, function(form){
-
-				<?php } else { ?>
-
-				MktoForms2.loadForm("//app-sjp.marketo.com", "303-ZIH-630", <?php if(get_field('license_type') == "community") { ?>503<?php } elseif(get_field('license_type') == "trial") { ?>502<?php } elseif(get_field('license_type') == "freemium") { ?>1015<?php } elseif(get_field('license_type') == "freemiumTrial") { ?>1014<?php } elseif(get_field('license_type') == "saas") { ?>1131<?php } else { the_field('marketo_form_code'); } ?>, function(form){
-
-				<?php } ?>
+				MktoForms2.loadForm("//app-sjp.marketo.com", "303-ZIH-630", <?php if(is_page('30542')) { ?>1124<?php } elseif(is_page('37281')) { ?>1632<?php } elseif(get_field('license_type') == "community") { ?>503<?php } elseif(get_field('license_type') == "trial") { ?>502<?php } elseif(get_field('license_type') == "freemium") { ?>1015<?php } elseif(get_field('license_type') == "freemiumTrial") { ?>1014<?php } elseif(get_field('license_type') == "saas") { ?>1131<?php } else { the_field('marketo_form_code'); } ?>, function(form){
 
 					jQuery( ".mktoButton" ).addClass( "btn btn-vmt" );
 					jQuery( ".mktoButtonWrap.mktoSimple" ).removeClass( "mktoSimple mktoButtonWrap" );
@@ -61,7 +57,7 @@
 						var co = tH($jQ("#Company").val());
 						var ty = tH("<?php the_field( 'license_type' ) ?>");
 
-						<?php if(is_page('30542')) { ?>
+						<?php if(is_page('30542') || is_page('37281')) { ?>
 							var query = "?a=" + encodeURI(em) + "&b=" + encodeURI(fi) + "&c=" + encodeURI(la)+ "&d=" + encodeURI(ty) + "&e=" + encodeURI(co) + "&v=" + encodeURI("v4");
 						<?php } else { ?>
 							var query = "?a=" + encodeURI(em) + "&b=" + encodeURI(fi) + "&c=" + encodeURI(la)+ "&d=" + encodeURI(ty) + "&e=" + encodeURI(co);
@@ -79,9 +75,14 @@
 						xmlhttp.send(query);
 
 					}); // end on submit form
-				  form.onSuccess(function(){
-					// window.optimizely.push(["trackEvent", "form_success"]);
-				  });
+				  
+			<?php if(is_page('16412') || is_page('30542') || is_page('37281')) { ?>
+				form.onSuccess(function(){
+					window['optimizely'] = window['optimizely'] || [];
+					window.optimizely.push(["trackEvent", "form_success"]);
+				});
+			<?php } ?>
+			
 				});
 			})
 		<?php } elseif(is_page('28585')) { ?>
@@ -127,24 +128,39 @@
 				});
 			});
 
+		<?php } elseif(get_field('marketo_form_version') == 'global') { ?>
+			
+			MktoForms2.loadForm("//app-sjp.marketo.com", "303-ZIH-630", <?php the_field('form_type');?>, function(form){
+				jQuery( ".mktoButton" ).addClass( "btn btn-vmt" );
+				jQuery( ".mktoButtonWrap.mktoSimple" ).removeClass( "mktoSimple mktoButtonWrap" );
+				
+				
+				form.onSuccess(function(values, followUpUrl) {
+					location.href = "<?php the_field('thank_you_page_url'); ?>";
+					return false;
+				});
+				  
+			});
+			
 		<?php } else { ?>
 
 			MktoForms2.loadForm("//app-sjp.marketo.com", "303-ZIH-630", <?php the_field('marketo_form_code');?>, function(form){
 				jQuery( ".mktoButton" ).addClass( "btn btn-vmt" );
 				jQuery( ".mktoButtonWrap.mktoSimple" ).removeClass( "mktoSimple mktoButtonWrap" );
+				  
 			});
 
-		<?php if(is_page('28092')) { ?>
+			<?php if(is_page('28092')) { ?>
 
-//	wistiaEmbed = document.getElementById("wistiaframe").wistiaApi;wistiaEmbed.bind("end", function() {
-//		jQuery( "#fademe" ).fadeOut( "slow", function() {});
-//	});
-//	wistiaEmbed.bind("secondchange", function (s) {if(s === 180) {
-//		jQuery('.mktoButtonRow .alert').hide();jQuery('.mktoButtonRow .btn-vmt').fadeIn();
-//	}});
-//		jQuery('.mktoButtonRow span').append('<div class="alert">You must watch the video before submitting this form</div>');
+			//	wistiaEmbed = document.getElementById("wistiaframe").wistiaApi;wistiaEmbed.bind("end", function() {
+			//		jQuery( "#fademe" ).fadeOut( "slow", function() {});
+			//	});
+			//	wistiaEmbed.bind("secondchange", function (s) {if(s === 180) {
+			//		jQuery('.mktoButtonRow .alert').hide();jQuery('.mktoButtonRow .btn-vmt').fadeIn();
+			//	}});
+			//		jQuery('.mktoButtonRow span').append('<div class="alert">You must watch the video before submitting this form</div>');
 
-		<?php } ?>
+			<?php } ?>
 
 		<?php } ?>
 		</script>
@@ -182,6 +198,21 @@
 		</script>
 		<?php } ?>
 
+		<?php if(is_page('34478') || is_page('25720')) { // work email a/b test ?>
+			
+		<script type="text/javascript">
+		jQuery(window).load(function(){
+			MktoForms2.whenReady(function (form) {
+				
+				var obj = optimizely.variationMap
+				if (jQuery("input[name='testValue']").filter(function() { return jQuery(this).val(); }).length == 0) {
+					var object = JSON.stringify(optimizely.variationMap);
+					jQuery("input[name='testValue']").val('optimizely: ' + object);
+				}
+			});
+		})
+		</script>
+		<?php } ?>
 		</div>
 	</div>
 </div>

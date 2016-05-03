@@ -15,6 +15,30 @@
     <div class="entry-content">
       <?php the_content(); ?>
     </div>
+	
+	<?php if(get_field('collateral_cta_box')) { ?>
+	
+		<?php $posts = get_field('collateral_cta_box');
+			if( $posts ): ?>
+			<div id="blog-end-cta-box">
+			<?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
+				<?php setup_postdata($post); ?>
+				<?php 
+				$field = get_field_object('type');
+				$value = get_field('type');
+				$label = $field['choices'][ $value ]; ?>
+					<span class="cta-label">Recommended <?php echo $label; ?></span>
+					<div>
+						<a class="cta-title-link" href="<?php the_permalink(); ?>" target="_blank"><?php the_title(); ?></a>
+						<p class="cta-description"><?php the_field('description'); ?></p>
+						<a href="<?php the_permalink(); ?>" target="_blank" class="btn btn-vmt-slim">Download Now</a>
+					</div>
+			<?php endforeach; ?>
+			</div>
+			<?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+		<?php endif; ?>
+
+	<?php } ?>
 	<?php if (get_the_author_meta('description')) {?>
 	  <div id="author-box">
 		  <div class="row">
@@ -25,7 +49,7 @@
 		  <span class="author-box-name"><?php echo get_the_author_meta('display_name'); ?></span>
 		  </div>
 		  <div class="col-sm-9">
-		  <?php echo get_the_author_meta('description'); ?>
+		  <p><?php echo get_the_author_meta('description'); ?></p>
 		  </div>
 		  <div class="clearfix"></div>
 		  </div>
@@ -42,11 +66,11 @@
   </div>
   </div>
   
-  <div id="next-post" class="col-md-12">
-	<div class="pull-left">
+  <div id="next-post" class="row hidden-xs">
+	<div class="col-sm-6">
 		<?php previous_post_link( '<strong>&laquo; Older Post</strong> %link', '%title', TRUE ); ?>
 	</div>
-	<div class="pull-right">
+	<div class="col-sm-6 text-right">
 		<?php next_post_link( '<strong>Newer Post &raquo;</strong> %link', '%title', TRUE ); ?> 
 	</div>
   </div>

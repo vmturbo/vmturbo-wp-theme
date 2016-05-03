@@ -3,29 +3,6 @@
  * Template Name: Homepage
  */
 ?>
-
-	<script type="text/javascript">
-	jQuery(document).ready(function($){
-		 // mixpanel start
-			$("#first-slider-cta" ).on('click', function(e) {
-				mixpanel.track("Element Interaction", {
-					"Interaction": "Clicked on #first-slider-cta"
-				});	
-			});
-			$("#first-midlevel-cta" ).on('click', function(e) {
-				mixpanel.track("Element Interaction", {
-					"Interaction": "Clicked on #first-midlevel-cta"
-				});	
-			});
-			$("#second-midlevel-cta" ).on('click', function(e) {
-				mixpanel.track("Element Interaction", {
-					"Interaction": "Clicked on #second-midlevel-cta"
-				});	
-			});
-		 // mixpanel end
-	});
-	</script>
-	
     <div id="hero-carousel" class="carousel slide" data-ride="carousel" data-interval="7000">
       <ol class="carousel-indicators">
         <li data-target="#hero-carousel" data-slide-to="0" class="active"></li>
@@ -50,18 +27,14 @@
             </div>
           </div>
         </div>
-        <div class="item" id="hero-slide-1" style="background: url(http://cdn.vmturbo.com/wp-content/uploads/2016/02/aws-loft-turbofest-dark2.png) no-repeat center center;-webkit-background-size: cover;background-size: cover;">
+        <div class="item" id="hero-slide-1" style="background: url(http://cdn.vmturbo.com/wp-content/uploads/2016/01/turbofest-2016-hero-2.jpg) no-repeat center center;-webkit-background-size: cover;background-size: cover;">
           <div class="container">
             <div class="carousel-caption" style="padding:100px 50px 0;">
 				<div class="row animated fadeInRightBig">
-					<div class="col-md-3 col-md-push-1 hidden-sm hidden-xs">
-						<img src="http://cdn.vmturbo.com/wp-content/uploads/2016/02/Turbowest-Logo3-1.png" class="img-responsive" style="width:100%" />
-					</div>
-					<div class="col-md-7 col-md-push-1">
-						<h2 style="text-align:left;margin-top:0em">Turbofest Silicon Valley</h2>
-						<span style="text-align:left;font-weight:bold;display:block;margin-bottom:5px;">03.09.2016</span>
-						<p style="text-align:left" class="hidden-xs">Join VMTurbo partners and customers at the AWS Loft in San Francisco for an afternoon of networking and hilarity from Kumail Nanjiani of HBO's smash-hit, <em>Silicon Valley</em>.</p>
-						<a href="http://vmturbo.com/turbofest-silicon-valley" style="color: #fff;font-family: 'Open sans', sans-serif;text-decoration: none;max-width: 250px;background: rgba(255,255,255,.2);padding: 15px 50px;border-radius: 5px;border: 1px solid #ccc;text-align: center;display: block;margin-top: 2em">Guarantee Your Seat &raquo;</a>
+					<div class="col-md-10 col-md-push-1">
+						<h2 style="text-align:center;margin-top:0em">Turbofest World Tour 2016</h2>
+						<p style="text-align:center" class="hidden-xs">Turbofest is an opportunity for you to learn from VMTurbo and its technology partners about the next generation of cloud and virtualization. Join us at a city near you in 2016.</p>
+						<a href="http://vmturbo.com/turbofest-world-2016/" style="color: #fff;font-family: 'Open sans', sans-serif;text-decoration: none;max-width: 250px;background: rgba(255,255,255,.2);padding: 15px 50px;border-radius: 5px;border: 1px solid #ccc;text-align: center;display: block;margin:2em auto 0;">Guarantee Your Seat &raquo;</a>
 					</div>
 				</div>
               
@@ -71,7 +44,7 @@
 		<div class="item" id="hero-verizon" style="background:#fff;color:#222;">
           <div class="container">
             <div class="carousel-caption" style="padding-top:85px;">
-				<div class="row animated fadeInDownBig">
+				<div class="row animated fadeInRightBig">
 					<div class="col-sm-10 col-sm-push-1">
 					<img src="//cdn.vmturbo.com/wp-content/uploads/2015/11/verizon-b.png" class="hidden-xs" />
               <h2 style="font-weight:bold;color:#222;text-shadow:none;">Verizon and VMTurbo Join Forces to Develop Intelligent Cloud Control</h2>
@@ -176,8 +149,8 @@
       </a>
     </div>
 	
-	
-<span style="display: block;text-align: center;background-color: #222;color: #ccc;font-size:1.3em;padding: 30px;">Trusted by thousands of engineers in enterprises across the world.</span>
+	<div style="background: #2E2E2E;color: #fff;text-align: center;padding: 1.5em 0;"><span style="font-weight: 700;font-size: 1em;">Gartner Innovation Insight: </span><span style="font-size: 1em;">Dynamic Optimization Technology for Infrastructure Resources and Cloud Services</span> <a href="http://vmturbo.com/resources/dynamic-optimization-technology-for-cloud-services/" class="btn btn-sm btn-vmt" style="padding: 5px 10px;margin-left: 1em;" target="_blank" onclick="_gaq.push(['_trackEvent', 'Homepage', 'Click', 'Gartner Report']);">Get Report</a></div>
+<span style="display: block;text-align: center;background-color: #222;color: #ccc;font-size:1.3em;padding: 30px;display:none;">Trusted by thousands of engineers in enterprises across the world.</span>
  <div class="slick hidden-xs" id="logoslide">
 	<div><img src="//cdn.vmturbo.com/wp-content/themes/vmturbo/inc/micro/img/autonationlogo.jpg"></div>
 	<div><img src="//cdn.vmturbo.com/wp-content/themes/vmturbo/inc/micro/img/akamai.jpg"></div>
@@ -212,7 +185,7 @@
 			<div class="col-sm-10 col-sm-push-1" style="text-align:center;color:#fff;">
 				<div style="padding:0 3em 2em;">
 					<p style="line-height:160%"><strong>Virtual and cloud environments are complex.</strong> Every decision about application workload demand - what to place where, when, and in what order - impacts every other entity and resource in the data center. It's complex, it's dynamic and it's way beyond human scale.</p>
-					<p style="line-height:160%">VMTurbo's Application Performance Control system understands application demands, meeting them with infrastructure supply to assure application performance and let engineers focus on more important decisions.</p>
+					<p style="line-height:160%">VMTurbo's Application Performance Control system makes real-time placement, sizing and configuration decisions to assure the performance of any app and let engineers focus on more important tasks. </p>
 				</div>
 				<a href="//fast.wistia.net/embed/iframe/st33aun7xy?popover=true" class="wistia-popover[height=450,playerColor=7b796a,width=800] btn btn-vmt btn-spacer" style="font-family:Open Sans, sans-serif;">Watch the video &raquo;</a>
 			</div>
@@ -245,7 +218,7 @@
 				<div class="col-sm-4">
 					<a href="http://vmturbo.com/product/operations-management-software/?t=1#maximize-opex"><img src="http://vmturbo.com/wp-content/uploads/2014/04/icon-roi.png" style="margin-bottom:1em;" /></a>
 					<h4>3 Month ROI</h4>
-					<span>89% of customers see a return in 3 months, improving VM density and reducing operational overhead.</span>
+					<span>91% of customers see a return in 3 months, improving VM density and reducing operational overhead.</span>
 					<a href="http://vmturbo.com/product/operations-management-software/?t=1#maximize-opex" class="triad-link">Learn More &raquo;</a>
 				</div>
 			</div>

@@ -385,3 +385,9 @@ a.gc-nav-link {
 .jive-table-cell-title a {
 	max-width:300px !important;
 }
+.jive-widget-imagecarousel {
+    height: 275px !important;
+}
+li.sub-cat {
+	margin:.7em 0 0;padding:0;font-size:.9em
+}

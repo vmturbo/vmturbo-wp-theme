@@ -181,9 +181,12 @@ function button_marketo_modal( $atts , $content = null ) {
 		array(
 			'form' => '',
 			'title' => '',
+			'ty' => '',
 		), $atts )
 	);
 
+	$tyval = html_entity_decode($ty);
+	
 	STATIC $i = 0; 
 	$i++;
 	// Code
@@ -193,13 +196,24 @@ function button_marketo_modal( $atts , $content = null ) {
 
 	$("#modal-' . $i . '-click").click(function() {$("#modal-' . $i . '").modal();});
 		var countForms = $(\'.mktoForm_' . $form . '\').length;
-		var countHeaderForms = $(\'.mktoForm_' . $form . '.header-form\').length;
-		if (countHeaderForms == 1) {} 
-		else if (' . $i . ' == 1) {
-			console.log(countForms);
+		if (countForms == 1) {
 			MktoForms2.loadForm("//app-sjp.marketo.com", "303-ZIH-630", ' . $form . ', function(form){
 				$( ".mktoButton" ).addClass( "btn btn-vmt" );
 				$( ".mktoButtonWrap.mktoSimple" ).removeClass( "mktoSimple mktoButtonWrap" );
+					form.onSuccess(function(values, followUpUrl) {
+						location.href = "' . $tyval . '";
+						return false;
+					});
+			});
+		} 
+		else if (' . $i . ' == 1) {
+			MktoForms2.loadForm("//app-sjp.marketo.com", "303-ZIH-630", ' . $form . ', function(form){
+				$( ".mktoButton" ).addClass( "btn btn-vmt" );
+				$( ".mktoButtonWrap.mktoSimple" ).removeClass( "mktoSimple mktoButtonWrap" );
+					form.onSuccess(function(values, followUpUrl) {
+						location.href = "' . $tyval . '";
+						return false;
+					});
 			});
 		} 
 	else {}
@@ -225,6 +239,22 @@ function collapse_readmore( $atts , $content = null ) {
 
 }
 add_shortcode( 'more', __NAMESPACE__ . '\\collapse_readmore' );
+
+
+// shortcode for popup
+function image_popover( $atts , $content = null ) {
+	
+	// Attributes
+	extract( shortcode_atts(
+		array(
+		), $atts )
+	);
+
+	// Code
+	return '<a href="' . $content . '" class="image-links"><img src="' . $content . '" class="img-responsive" /></a>';
+
+}
+add_shortcode( 'popover', __NAMESPACE__ . '\\image_popover' );
 
 
 
@@ -393,4 +423,24 @@ function vmt_author_img_save( $user_id ) {
 		return false;
 	// for each field (below)
 	update_usermeta( $user_id, 'authorimg', $_POST['authorimg'] );
+}
+
+// Revelanassi ACF Support for Repeater Fields
+add_filter('relevanssi_excerpt_content',  __NAMESPACE__ . '\\custom_fields_to_excerpts', 10, 3);
+function custom_fields_to_excerpts($content, $post, $query) {
+	$fields = get_field('content', $post->ID);
+	if($fields){
+		foreach($fields as $field){
+			if ($field['acf_fc_layout'] == "text"){
+				$content .= " " . $field['text'];
+				if($field['text_2']){
+					$content .= " " . $field['text_2'];
+				}
+				if($field['text_3']){
+					$content .= " " . $field['text_3'];
+				}
+			}
+		}
+	}
+	return $content;
 }

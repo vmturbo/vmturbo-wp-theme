@@ -9,6 +9,8 @@ if ( in_category('blog') ) {
 	get_template_part('templates/content-single', get_post_type());
 } elseif ( is_singular( 'events' ) ) {
 	get_template_part('templates/content-events', get_post_type());
+} elseif ( is_singular( 'videos' ) ) {
+	get_template_part('templates/content-videos', get_post_type());
 } else {
 	get_template_part('templates/content-single', get_post_type());
 }
