@@ -4212,28 +4212,30 @@ body.search-no-results {
 		border-radius: 5px;
 		border: 1px solid #ddd;
 		box-shadow: 0 0 20px $gray-lighter;
-		padding: 2em;
+		// padding: 2em;
+		padding: 2em 2em 0.9em 2em;
 		margin: 1em 0;
+
+		.social-media {
+			text-align: center;
+		}
 
 		h1 {
 			font-weight: 600;
 			font-size: 1.8em;
-			border-bottom: 5px solid $gray-lighter;
-			padding-bottom: .5em;
-			margin-bottom: .5em;
+			// border-bottom: 5px solid $gray-lighter;
+			// padding-bottom: .5em;
+			// margin-bottom: .5em;
 		}
 
-		.linkedin-img {
-			height:30px;
-			width:30px;
+		.social-media {
+
+				img {
+					height: 20px;
+					width: 20px;
+				}
 		}
 
-		.linkedin-url {
-			line-height: 30px;
-    	margin-left: -131px;
-    	font-weight: 600;
-    	font-size: 0.9em;
-		}
 	}
 
 	article {
