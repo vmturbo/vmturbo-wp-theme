@@ -4218,6 +4218,7 @@ body.search-no-results {
 
 		.social-media {
 			text-align: center;
+			padding-bottom: 1em;
 		}
 
 		h1 {
@@ -4248,6 +4249,13 @@ body.search-no-results {
 				color:$gray-dark;
 			}
 		}
+	}
+
+	.post-style {
+		background:#fff;
+		border: 1px solid #eee;
+		padding: 1em 2em;
+		margin: 1em 0;
 	}
 
 	.navigation {

@@ -47,11 +47,28 @@
 			</div>
 			<?php
 			} ?>
-<?php while (have_posts()) : the_post(); ?>
-		<div style="background:#fff;border:1px solid #eee;padding:1em 2em;margin:1em 0;"><?php get_template_part('templates/content', get_post_type() != 'post' ? get_post_type() : get_post_format()); ?></div>
-<?php endwhile; ?>
 	</div>
-  </div>
+
+<div class="col-md-8">
+	<?php while (have_posts()) : the_post(); ?>
+		<div class="post-style">
+			<div class="row">
+				<div class="featured-image col-md-4">
+					<?php if ( has_post_thumbnail() ) { ?>
+					<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('medium', array('class' => 'img-responsive blog-featured-img')); ?></a><?php } else { ?>
+					<img src="//cdn.vmturbo.com/wp-content/uploads/2015/09/vmturbo-logo-circle.png" class="img-responsive blog-featured-img" />
+					<?php } ?>
+				</div>
+
+				<div class="col-md-8">
+					<?php get_template_part('templates/content', get_post_type() != 'post' ? get_post_type() : get_post_format()); ?>
+				</div>
+			</div>
+		</div>
+	<?php endwhile; ?>
+</div>
+
+
 <!-- <?php the_posts_navigation(); ?> -->
 
 <div class="row">
