@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Temporary: Multi-Cloud Survey
+ * Template Name: Temporary: Public Cloud Guide
  */
 ?>
 <style>

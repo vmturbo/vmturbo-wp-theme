@@ -19,17 +19,17 @@
 				  </div>
 				  <div class="col-sm-12">
 					  <h1><?php echo get_the_author_meta('display_name'); ?></h1>
-					  	<?php if (get_the_author_meta('linkedin_url')) { ?>
+
 						  	<div class="col-sm-12">
 						  		<div class="social-media">
+						  		<?php if (get_the_author_meta('linkedin_url')) { ?>
 							  		<a href="<?php echo get_the_author_meta('linkedin_url'); ?>"><img class="linkedin-img" src="http://vmturbo.com/wp-content/uploads/2014/04/email-linkedin.png"/></a>
+							  	<?php } ?>
+							  	<?php if (get_the_author_meta('twitter')) { ?>
 							  		<a href="https://www.twitter.com/<?php echo get_the_author_meta('twitter'); ?>"><img class="twitter-img" src="http://vmturbo.com/wp-content/uploads/2014/04/email-twitter.png"/></a>
+							  	<?php } ?>
 						  		</div>
 						  	</div>
-						  <?php } ?>
-
-
-
 					  <p><?php echo get_the_author_meta('description'); ?></p>
 				  </div>
 			  </div>
