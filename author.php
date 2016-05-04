@@ -19,13 +19,11 @@
 				  </div>
 				  <div class="col-sm-12">
 					  <h1><?php echo get_the_author_meta('display_name'); ?></h1>
-
-					  <?php $twitter_handle = get_the_author_meta('twitter'); ?>
 					  	<?php if (get_the_author_meta('linkedin_url')) { ?>
 						  	<div class="col-sm-12">
 						  		<div class="social-media">
 							  		<a href="<?php echo get_the_author_meta('linkedin_url'); ?>"><img class="linkedin-img" src="http://vmturbo.com/wp-content/uploads/2014/04/email-linkedin.png"/></a>
-							  		<a href="https://www.twitter.com/<?php echo($twitter_handle);?>"><img class="twitter-img" src="http://vmturbo.com/wp-content/uploads/2014/04/email-twitter.png"/></a>
+							  		<a href="https://www.twitter.com/<?php echo get_the_author_meta('twitter'); ?>"><img class="twitter-img" src="http://vmturbo.com/wp-content/uploads/2014/04/email-twitter.png"/></a>
 						  		</div>
 						  	</div>
 						  <?php } ?>
