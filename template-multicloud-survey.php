@@ -64,7 +64,7 @@ body {
 		background-size: cover;
 		padding: 80px 0 0 0;
 		color: #fff;
-		
+
 	}
 		#home-jumbo a {
 			color:#fff;
@@ -81,7 +81,7 @@ body {
 		#home-jumbo span {
 			font-weight:600;
 		}
-		
+
 	#submit-form {
 		margin-top:3em;
 	}
@@ -95,7 +95,7 @@ body {
 #home-multi {
 	padding:7em 1.5em;
 }
-@media all and (max-width: 480px) { 
+@media all and (max-width: 480px) {
 	#home-multi {
 		padding:1em 1.5em;
 	}
@@ -121,7 +121,7 @@ body {
 		<div style="padding:2em 0;">
 			<img src="http://cdn.vmturbo.com/wp-content/uploads/2016/04/multi-cloud-mockup-text.png" class="img-responsive" alt="The State of Multi-Cloud Part 1" title="The State of Multi-Cloud Part 1" style="margin-bottom:1.5em;" />
 			<?php the_content(); ?>
-			
+
 		</div>
 		</div>
 	</div>
